@@ -9,16 +9,30 @@ import {
 } from "blitz"
 import LoginForm from "app/auth/components/LoginForm"
 
+import CssBaseline from "@material-ui/core/CssBaseline"
+import { ThemeProvider, createTheme, PaletteOptions } from "@material-ui/core/styles"
+import React from "react"
+
+//You can customize this as you want and even move it out to a separate file
+const theme = createTheme({
+  palette: {
+    type: "light",
+  } as PaletteOptions,
+})
+
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
-    <ErrorBoundary
-      FallbackComponent={RootErrorFallback}
-      onReset={useQueryErrorResetBoundary().reset}
-    >
-      {getLayout(<Component {...pageProps} />)}
-    </ErrorBoundary>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <ErrorBoundary
+        FallbackComponent={RootErrorFallback}
+        onReset={useQueryErrorResetBoundary().reset}
+      >
+        {getLayout(<Component {...pageProps} />)}
+      </ErrorBoundary>
+    </ThemeProvider>
   )
 }
 

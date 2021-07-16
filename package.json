@@ -24,13 +24,18 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "11.4.0",
+    "@emotion/styled": "11.3.0",
+    "@material-ui/core": "5.0.0-beta.1",
+    "@material-ui/icons": "5.0.0-beta.1",
+    "@material-ui/styles": "4.11.4",
     "@prisma/client": "2.27.0",
     "blitz": "0.38.5",
-    "react-dom": "alpha",
-    "react": "alpha",
-    "zod": "3.5.1",
     "final-form": "4.20.2",
-    "react-final-form": "6.5.3"
+    "react": "alpha",
+    "react-dom": "alpha",
+    "react-final-form": "6.5.3",
+    "zod": "3.5.1"
   },
   "devDependencies": {
     "@types/preview-email": "2.0.1",
